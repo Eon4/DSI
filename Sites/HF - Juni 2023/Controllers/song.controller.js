@@ -1,10 +1,15 @@
-import db from '../Config/mysql.config.js'
+import db from "../Config/db.config.js";
 
 class SongController {
-	constructor() {
-		console.log('Class SongController instantiated');
+  constructor() {
+    console.log("Class SongController instantiated");
+  }
+  // list
+  /* 	list = () => {
+		console.log('Kører list metode');
+		return true
 	}
-
+ */
 	list = (req, res) => {
 		const sql = `SELECT s.id, s.title, a.name, a.id AS artist_id
 						FROM song s 
@@ -19,6 +24,12 @@ class SongController {
 			}
 		})
 	}
+
+  // details
+/*   details = () => {
+    console.log("Kører details metode");
+    return true;
+  }; */
 
 	details = (req, res) => {
 		const id = parseInt(req.params.id)
@@ -36,6 +47,12 @@ class SongController {
 			}
 		})
 	}
+
+  // create
+/*   create = () => {
+    console.log("Kører create metode");
+    return true;
+  }; */
 
 	create = (req, res) => {
 		const { title, content, artist_id } = req.body
@@ -56,11 +73,17 @@ class SongController {
 		}
 
 	}
-	// create
+  // update
+  update = () => {
+    console.log("Kører update metode");
+    return true;
+  };
 
-	// update
-
-	// delete
+  // delete
+  delete = () => {
+    console.log("Kører delete metode");
+    return true;
+  };
 }
 
-export default SongController
+export default SongController;
